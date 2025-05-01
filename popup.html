@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Ad Muter Control</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 16px;
+      width: 320px;
+      color: #333;
+    }
+    h3, h4 {
+      margin: 8px 0;
+    }
+    label {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 12px;
+      font-size: 14px;
+    }
+    input[type="number"] {
+      width: 100px;
+      padding: 4px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+    input[type="checkbox"] {
+      transform: scale(1.2);
+      margin-right: 8px;
+    }
+    button {
+      display: block;
+      margin: 8px auto 16px;
+      padding: 6px 14px;
+      font-size: 14px;
+      border: none;
+      background: #007bff;
+      color: white;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+    button:disabled {
+      background: #aaa;
+      cursor: not-allowed;
+    }
+    ul {
+      list-style: inside disc;
+      padding-left: 0;
+      margin: 0;
+      max-height: 140px;
+      overflow-y: auto;
+      font-size: 13px;
+    }
+    ul li {
+      margin-bottom: 4px;
+    }
+  </style>
+</head>
+<body>
+  <h3>Hotstar Ad Muter</h3>
+  <label>
+    <span>
+      <input type="checkbox" id="autoMuteToggle" />
+      Enable Auto Mute
+    </span>
+  </label>
+
+  <h4>Settings</h4>
+  <label>
+    <span>Mute Delay (seconds)</span>
+    <input type="number" id="muteDelay" min="2" max="15" step="1" />
+  </label>
+  <label>
+    <span>Unmute Timeout (seconds)</span>
+    <input type="number" id="inactivityTimeout" min="8" max="35" step="1" />
+  </label>
+  <button id="saveSettings">Save Settings</button>
+
+  <h4>Logs</h4>
+  <ul id="logList"></ul>
+
+  <script src="popup.js"></script>
+</body>
+</html>
